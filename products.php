@@ -2,6 +2,7 @@
 <!--
 - tombol search (supplier dan category)
 -->
+  <link rel="stylesheet" href="lteasset/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
 <div class="row">
 	<div class="col-md-12">
@@ -91,19 +92,13 @@
 					<div class="form-group">
 						<label class="col-sm-3 control-label">Supplier ID </label>
 						<label class="col-sm-1 control-label">: </label>
-						<div class="col-sm-8">
-							<select id="sid" name="sid" class="form-control select2" multiple="" data-placeholder="" style="width: 100%;">
-									
-							<?php
-							$sql = "select * from categories";
-							$query = $connect->query($sql);
-
-							while($row = $query->fetch_array()) {
-								echo "<option value='".$row[0]."'>".$row[1]."</option>";
-							}
-							?>
-								</select>
+						<div class="col-sm-7">
+							<input type="text" class="form-control" id="sid" placeholder="Category ID" name="sid" autocomplete="off">
 						</div>
+						<div class="col-sm-1" style="margin-left:-20px;">
+							<button type="button" id="searchsid" name="searchsid" onclick="searchCategory();" data-toggle="modal" data-target="#searchS" data-backdrop="static" data-keyboard="false" class="btn btn-default glyphicon glyphicon-search"></button>
+						</div>	
+						
 					</div> <!-- /form-group-->
 					<div class="form-group">
 						<label class="col-sm-3 control-label">Status </label>
@@ -218,6 +213,21 @@
 <!-- /edit brand -->
 
 
+<script>
+	function selectc(valu){
+		document.getElementById('cid').value=valu;
+	}
+	function selects(valu){
+		document.getElementById('sid').value=valu;
+		
+	}
+</script>
+
+
+
+
+
+
 <!-- Search Category -->
 <div class="modal fade" id="searchC" tabindex="-1" role="dialog">
 	<div class="modal-dialog">
@@ -235,15 +245,16 @@
 				</div>
 
 				<div class="searchC-result">
-					<table class="table" id="sc">
-						<thead>
-							<tr>
-								<th>Category ID<div class="glyphicon glyphicon-sort"></div></th>
-								<th>Category Name <div class="glyphicon glyphicon-sort"></div></th>
-								<th>Description <div class="glyphicon glyphicon-sort"></div></th>
-							</tr>
-						</thead>
-						<tbody>
+					 <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+								<th>Category ID</th>
+								<th>Category Name </th>
+								<th>Description</th>
+								<th></th>
+                </tr>
+                </thead>
+                <tbody>
 							<?php
 							$sql = "select * from categories";
 							$query = $connect->query($sql);
@@ -253,12 +264,21 @@
 								echo "<td>".$row[0]."</td>";
 								echo "<td>".$row[1]."</td>";
 								echo "<td>".$row[2]."</td>";
-								echo "<td><button class='btn btn-default'>Select</button></td>";
+								echo "<td><button  onClick='selectc(".$row[0].")' data-dismiss='modal' class='btn btn-default'>Select</button></td>";
 								echo "</tr>";
 							}
 							?>
-						</tbody>
-					</table>
+                </tbody>
+                <tfoot>
+                <tr>
+								<th>Category ID</th>
+								<th>Category Name </th>
+								<th>Description</th>
+								<th></th>
+                </tr>
+                </tfoot>
+              </table>
+			
 				</div>         	        
 				<!-- /edit brand result -->
 
@@ -269,7 +289,106 @@
 	<!-- /modal-dailog -->
 </div>
 <!-- / add modal -->
+
+
+
+
+
+
+
+<!-- Search Category -->
+<div class="modal fade" id="searchS" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title"><i class="fa fa-search"></i> Search Category </h4>
+			</div>
+			<div class="modal-body">
+
+				<div id="searchC-messages"></div>
+
+				<div class="modal-loading div-hide" style="width:50px; margin:auto;padding-top:50px; padding-bottom:50px;">
+					<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+					<span class="sr-only">Loading...</span>
+				</div>
+
+				<div class="searchC-result">
+					 <table id="example2" class="table table-bordered table-striped">
+                <thead>
+                <tr> 
+								<th>Supplier ID</th>
+								<th>Supplier Name </th>
+								<th>Supplier Contact</th>
+								<th></th>
+                </tr>
+                </thead>
+                <tbody>
+							<?php
+							$sql = "select * from supplier";
+							$query = $connect->query($sql);
+
+							while($row = $query->fetch_array()) {
+								echo "<tr>";
+								echo "<td>".$row[0]."</td>";
+								echo "<td>".$row[1]."</td>";
+								echo "<td>".$row[2]."</td>";
+								echo "<td><button  onClick='selects(".$row[0].")' data-dismiss='modal' class='btn btn-default'>Select</button></td>";
+								echo "</tr>";
+							}
+							?>
+                </tbody>
+                <tfoot>
+                <tr>
+								<th>Supplier ID</th>
+								<th>Supplier Name </th>
+								<th>Supplier Contact</th>
+								<th></th>
+                </tr>
+                </tfoot>
+              </table>
+			
+				</div>         	        
+				<!-- /edit brand result -->
+
+			</div> <!-- /modal-body -->
+		</div>
+		<!-- /modal-content -->
+	</div>
+	<!-- /modal-dailog -->
+</div>
+<!-- / add modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- /edit brand -->
+
+<!-- DataTables -->
+<script src="lteasset/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="lteasset/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable()
+ 
+  })
+</script>
 
 <script src="custom/js/products.js"></script>
 
