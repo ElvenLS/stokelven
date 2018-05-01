@@ -163,7 +163,7 @@ function editProduct(productId = null) {
 
 				// setting the value 
 				$('#pid').val(response.productid);
-				$('#editproductname').val(response.name);
+				$('#editProductName').val(response.name);
 				$('#editQty').val(response.qty);
 				$('#editPrice').val(response.harga);
 				$('#editCid').val(response.categoryid);
