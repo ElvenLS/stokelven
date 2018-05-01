@@ -91,11 +91,18 @@
 					<div class="form-group">
 						<label class="col-sm-3 control-label">Supplier ID </label>
 						<label class="col-sm-1 control-label">: </label>
-						<div class="col-sm-7">
-							<input type="text" class="form-control" id="sid" placeholder="Supplier ID" name="sid" autocomplete="off">
-						</div>
-						<div class="col-sm-1" style="margin-left:-20px;">
-							<button type="button" id="searchSid" name="searchSid" onclick="searchSupplier();" class="btn btn-default glyphicon glyphicon-search"></button>
+						<div class="col-sm-8">
+							<select id="sid" name="sid" class="form-control select2" multiple="" data-placeholder="" style="width: 100%;">
+									
+							<?php
+							$sql = "select * from categories";
+							$query = $connect->query($sql);
+
+							while($row = $query->fetch_array()) {
+								echo "<option value='".$row[0]."'>".$row[1]."</option>";
+							}
+							?>
+								</select>
 						</div>
 					</div> <!-- /form-group-->
 					<div class="form-group">
