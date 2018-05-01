@@ -2,7 +2,7 @@
 
 require_once 'core.php';
 
-$id = $_POST['productid'];
+$id = $_POST['productId'];
 
 $sql = "SELECT * FROM products WHERE productid = $id";
 $result = $connect->query($sql);

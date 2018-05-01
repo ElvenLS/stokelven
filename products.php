@@ -191,6 +191,17 @@
 							</div>
 						</div> <!-- /form-group-->
 
+							<div class="form-group">
+								<label for="editProductStatus" class="col-sm-3 control-label">Status: </label>
+								<label class="col-sm-1 control-label">: </label>
+								<div class="col-sm-8">
+									<select class="form-control" id="editStatus" name="editStatus">
+										<option value="Available">Available</option>
+										<option value="Unavailable">Not Available</option>
+									</select>
+								</div>
+							</div>
+
 					</div>         	        
 					<!-- /edit brand result -->
 
@@ -301,7 +312,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title"><i class="fa fa-search"></i> Search Category </h4>
+				<h4 class="modal-title"><i class="fa fa-search"></i> Search Supplier</h4>
 			</div>
 			<div class="modal-body">
 

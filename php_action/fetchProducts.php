@@ -28,6 +28,7 @@ if($result->num_rows > 0) {
 	    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editProductModel" onclick="editProduct('.$productId.')"> <i class="glyphicon glyphicon-edit"></i> Edit</button>
 	</div>';
 
+
  	$output['data'][] = array( 		
  		$row[0], 		
  		$row[1],
