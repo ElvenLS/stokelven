@@ -83,7 +83,7 @@
 						<label class="col-sm-3 control-label">Category ID </label>
 						<label class="col-sm-1 control-label">: </label>
 						<div class="col-sm-7">
-							<input type="text" class="form-control" id="cid" disabled placeholder="Category ID" name="cid" autocomplete="off">
+							<input type="text" class="form-control" id="cid" readonly placeholder="Category ID" name="cid" autocomplete="off">
 						</div>
 						<div class="col-sm-1" style="margin-left:-20px;">
 							<button type="button" id="searchCid" name="searchCid" onclick="searchCategory();" data-toggle="modal" data-target="#searchC" data-backdrop="static" data-keyboard="false" class="btn btn-default glyphicon glyphicon-search"></button>
@@ -93,7 +93,7 @@
 						<label class="col-sm-3 control-label">Supplier ID </label>
 						<label class="col-sm-1 control-label">: </label>
 						<div class="col-sm-7">
-							<input type="text" class="form-control" id="sid" disabled placeholder="Category ID" name="sid" autocomplete="off">
+							<input type="text" class="form-control" id="sid" readonly placeholder="Category ID" name="sid" autocomplete="off">
 						</div>
 						<div class="col-sm-1" style="margin-left:-20px;">
 							<button type="button" id="searchsid" name="searchsid" onclick="searchCategory();" data-toggle="modal" data-target="#searchS" data-backdrop="static" data-keyboard="false" class="btn btn-default glyphicon glyphicon-search"></button>
@@ -181,7 +181,7 @@
 						<label class="col-sm-3 control-label">Category ID </label>
 						<label class="col-sm-1 control-label">: </label>
 						<div class="col-sm-7">
-							<input type="text" class="form-control" id="editCid" disabled placeholder="Category ID" name="editCid" autocomplete="off">
+							<input type="text" class="form-control" id="editCid" readonly placeholder="Category ID" name="editCid" autocomplete="off">
 						</div>
 						<div class="col-sm-1" style="margin-left:-20px;">
 							<button type="button" id="searchCid" name="searchCid" onclick="searchCategory();" data-toggle="modal" data-target="#esearchC" data-backdrop="static" data-keyboard="false" class="btn btn-default glyphicon glyphicon-search"></button>
@@ -191,7 +191,7 @@
 						<label class="col-sm-3 control-label">Supplier ID </label>
 						<label class="col-sm-1 control-label">: </label>
 						<div class="col-sm-7">
-							<input type="text" class="form-control" disabled id="editSid" placeholder="Category ID" name="editSid" autocomplete="off">
+							<input type="text" class="form-control" readonly id="editSid" placeholder="Category ID" name="editSid" autocomplete="off">
 						</div>
 						<div class="col-sm-1" style="margin-left:-20px;">
 							<button type="button" id="searchsid" name="searchsid" onclick="searchCategory();" data-toggle="modal" data-target="#esearchS" data-backdrop="static" data-keyboard="false" class="btn btn-default glyphicon glyphicon-search"></button>
