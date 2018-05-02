@@ -176,20 +176,31 @@
 								<input type="text" class="form-control" id="editPrice" placeholder="Price" name="editPrice" autocomplete="off">
 							</div>
 						</div> <!-- /form-group-->
+
 						<div class="form-group">
-							<label class="col-sm-3 control-label">Category ID </label>
-							<label class="col-sm-1 control-label">: </label>
-							<div class="col-sm-8">
-								<input type="text" class="form-control" id="editCid" placeholder="Category ID" name="editCid" autocomplete="off">
-							</div>
-						</div> <!-- /form-group-->
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Supplier ID</label>
-							<label class="col-sm-1 control-label">: </label>
-							<div class="col-sm-8">
-								<input type="text" class="form-control" id="editSid" placeholder="Supplier ID" name="editSid" autocomplete="off">
-							</div>
-						</div> <!-- /form-group-->
+						<label class="col-sm-3 control-label">Category ID </label>
+						<label class="col-sm-1 control-label">: </label>
+						<div class="col-sm-7">
+							<input type="text" class="form-control" id="editCid" placeholder="Category ID" name="editCid" autocomplete="off">
+						</div>
+						<div class="col-sm-1" style="margin-left:-20px;">
+							<button type="button" id="searchCid" name="searchCid" onclick="searchCategory();" data-toggle="modal" data-target="#esearchC" data-backdrop="static" data-keyboard="false" class="btn btn-default glyphicon glyphicon-search"></button>
+						</div>	
+					</div> <!-- /form-group-->
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Supplier ID </label>
+						<label class="col-sm-1 control-label">: </label>
+						<div class="col-sm-7">
+							<input type="text" class="form-control" id="editSid" placeholder="Category ID" name="editSid" autocomplete="off">
+						</div>
+						<div class="col-sm-1" style="margin-left:-20px;">
+							<button type="button" id="searchsid" name="searchsid" onclick="searchCategory();" data-toggle="modal" data-target="#esearchS" data-backdrop="static" data-keyboard="false" class="btn btn-default glyphicon glyphicon-search"></button>
+						</div>	
+						
+					</div>
+
+
+
 
 							<div class="form-group">
 								<label for="editProductStatus" class="col-sm-3 control-label">Status: </label>
@@ -369,6 +380,174 @@
 </div>
 <!-- / add modal -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+	function eselectc(valu){
+		document.getElementById('editCid').value=valu;
+	}
+	function eselects(valu){
+		document.getElementById('editSid').value=valu;
+		
+	}
+</script>
+
+
+
+
+
+
+<!-- Search Category -->
+<div class="modal fade" id="esearchC" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title"><i class="fa fa-search"></i> Search Category </h4>
+			</div>
+			<div class="modal-body">
+
+				<div id="searchC-messages"></div>
+
+				<div class="modal-loading div-hide" style="width:50px; margin:auto;padding-top:50px; padding-bottom:50px;">
+					<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+					<span class="sr-only">Loading...</span>
+				</div>
+
+				<div class="searchC-result">
+					 <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+								<th>Category ID</th>
+								<th>Category Name </th>
+								<th>Description</th>
+								<th></th>
+                </tr>
+                </thead>
+                <tbody>
+							<?php
+							$sql = "select * from categories";
+							$query = $connect->query($sql);
+
+							while($row = $query->fetch_array()) {
+								echo "<tr>";
+								echo "<td>".$row[0]."</td>";
+								echo "<td>".$row[1]."</td>";
+								echo "<td>".$row[2]."</td>";
+								echo "<td><button  onClick='eselectc(".$row[0].")' data-dismiss='modal' class='btn btn-default'>Select</button></td>";
+								echo "</tr>";
+							}
+							?>
+                </tbody>
+                <tfoot>
+                <tr>
+								<th>Category ID</th>
+								<th>Category Name </th>
+								<th>Description</th>
+								<th></th>
+                </tr>
+                </tfoot>
+              </table>
+			
+				</div>         	        
+				<!-- /edit brand result -->
+
+			</div> <!-- /modal-body -->
+		</div>
+		<!-- /modal-content -->
+	</div>
+	<!-- /modal-dailog -->
+</div>
+<!-- / add modal -->
+
+
+
+
+
+
+
+<!-- Search Category -->
+<div class="modal fade" id="esearchS" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title"><i class="fa fa-search"></i> Search Supplier</h4>
+			</div>
+			<div class="modal-body">
+
+				<div id="searchC-messages"></div>
+
+				<div class="modal-loading div-hide" style="width:50px; margin:auto;padding-top:50px; padding-bottom:50px;">
+					<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+					<span class="sr-only">Loading...</span>
+				</div>
+
+				<div class="searchC-result">
+					 <table id="example2" class="table table-bordered table-striped">
+                <thead>
+                <tr> 
+								<th>Supplier ID</th>
+								<th>Supplier Name </th>
+								<th>Supplier Contact</th>
+								<th></th>
+                </tr>
+                </thead>
+                <tbody>
+							<?php
+							$sql = "select * from supplier";
+							$query = $connect->query($sql);
+
+							while($row = $query->fetch_array()) {
+								echo "<tr>";
+								echo "<td>".$row[0]."</td>";
+								echo "<td>".$row[1]."</td>";
+								echo "<td>".$row[2]."</td>";
+								echo "<td><button  onClick='eselects(".$row[0].")' data-dismiss='modal' class='btn btn-default'>Select</button></td>";
+								echo "</tr>";
+							}
+							?>
+                </tbody>
+                <tfoot>
+                <tr>
+								<th>Supplier ID</th>
+								<th>Supplier Name </th>
+								<th>Supplier Contact</th>
+								<th></th>
+                </tr>
+                </tfoot>
+              </table>
+			
+				</div>         	        
+				<!-- /edit brand result -->
+
+			</div> <!-- /modal-body -->
+		</div>
+		<!-- /modal-content -->
+	</div>
+	<!-- /modal-dailog -->
+</div>
+<!-- / add modal -->
 
 
 
