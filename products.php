@@ -436,7 +436,7 @@
 				</div>
 
 				<div class="searchC-result">
-					 <table id="example1" class="table table-bordered table-striped">
+					 <table id="example3" class="table table-bordered table-striped">
                 <thead>
                 <tr>
 								<th>Category ID</th>
@@ -504,7 +504,7 @@
 				</div>
 
 				<div class="searchC-result">
-					 <table id="example2" class="table table-bordered table-striped">
+					 <table id="example4" class="table table-bordered table-striped">
                 <thead>
                 <tr> 
 								<th>Supplier ID</th>
@@ -577,6 +577,9 @@
     $('#example1').DataTable()
     $('#example2').DataTable()
  
+ 
+    $('#example3').DataTable()
+    $('#example4').DataTable()
   })
 </script>
 
