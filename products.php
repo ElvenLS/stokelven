@@ -27,13 +27,13 @@
 				<table class="table" id="manageProductTable">
 					<thead>
 						<tr>
-							<th>Product ID <div class="glyphicon glyphicon-sort"></div></th>
-							<th>Product Name <div class="glyphicon glyphicon-sort"></div></th>
-							<th>Qty <div class="glyphicon glyphicon-sort"></div></th>
-							<th>Price <div class="glyphicon glyphicon-sort"></div></th>
-							<th>Category ID <div class="glyphicon glyphicon-sort"></div></th>
-							<th>Supplier ID <div class="glyphicon glyphicon-sort"></div></th>
-							<th>Status <div class="glyphicon glyphicon-sort"></div></th>
+							<th>Product ID</th>
+							<th>Product Namev></th>
+							<th>Qty</th>
+							<th>Price</th>
+							<th>Category ID</th>
+							<th>Supplier ID</th>
+							<th>Status</th>
 							<th style="width:15%;">Options</th>
 						</tr>
 					</thead>
@@ -83,7 +83,7 @@
 						<label class="col-sm-3 control-label">Category ID </label>
 						<label class="col-sm-1 control-label">: </label>
 						<div class="col-sm-7">
-							<input type="text" class="form-control" id="cid" placeholder="Category ID" name="cid" autocomplete="off">
+							<input type="text" class="form-control" id="cid" disabled placeholder="Category ID" name="cid" autocomplete="off">
 						</div>
 						<div class="col-sm-1" style="margin-left:-20px;">
 							<button type="button" id="searchCid" name="searchCid" onclick="searchCategory();" data-toggle="modal" data-target="#searchC" data-backdrop="static" data-keyboard="false" class="btn btn-default glyphicon glyphicon-search"></button>
@@ -93,7 +93,7 @@
 						<label class="col-sm-3 control-label">Supplier ID </label>
 						<label class="col-sm-1 control-label">: </label>
 						<div class="col-sm-7">
-							<input type="text" class="form-control" id="sid" placeholder="Category ID" name="sid" autocomplete="off">
+							<input type="text" class="form-control" id="sid" disabled placeholder="Category ID" name="sid" autocomplete="off">
 						</div>
 						<div class="col-sm-1" style="margin-left:-20px;">
 							<button type="button" id="searchsid" name="searchsid" onclick="searchCategory();" data-toggle="modal" data-target="#searchS" data-backdrop="static" data-keyboard="false" class="btn btn-default glyphicon glyphicon-search"></button>
@@ -181,7 +181,7 @@
 						<label class="col-sm-3 control-label">Category ID </label>
 						<label class="col-sm-1 control-label">: </label>
 						<div class="col-sm-7">
-							<input type="text" class="form-control" id="editCid" placeholder="Category ID" name="editCid" autocomplete="off">
+							<input type="text" class="form-control" id="editCid" disabled placeholder="Category ID" name="editCid" autocomplete="off">
 						</div>
 						<div class="col-sm-1" style="margin-left:-20px;">
 							<button type="button" id="searchCid" name="searchCid" onclick="searchCategory();" data-toggle="modal" data-target="#esearchC" data-backdrop="static" data-keyboard="false" class="btn btn-default glyphicon glyphicon-search"></button>
@@ -191,7 +191,7 @@
 						<label class="col-sm-3 control-label">Supplier ID </label>
 						<label class="col-sm-1 control-label">: </label>
 						<div class="col-sm-7">
-							<input type="text" class="form-control" id="editSid" placeholder="Category ID" name="editSid" autocomplete="off">
+							<input type="text" class="form-control" disabled id="editSid" placeholder="Category ID" name="editSid" autocomplete="off">
 						</div>
 						<div class="col-sm-1" style="margin-left:-20px;">
 							<button type="button" id="searchsid" name="searchsid" onclick="searchCategory();" data-toggle="modal" data-target="#esearchS" data-backdrop="static" data-keyboard="false" class="btn btn-default glyphicon glyphicon-search"></button>
