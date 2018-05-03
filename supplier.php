@@ -65,7 +65,7 @@
 						<label for="brandName" class="col-sm-3 control-label">Contact </label>
 						<label class="col-sm-1 control-label">: </label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control" id="contact" placeholder="Supplier Contact" name="contact" autocomplete="off">
+							<input type="text" class="form-control" pattern="[0-9]+" id="contact" maxlength="13" placeholder="Supplier Contact" name="contact" autocomplete="off">
 						</div>
 					</div> <!-- /form-group-->
 					<div class="form-group">
@@ -80,8 +80,8 @@
 						<label for="brandName" class="col-sm-3 control-label">NPWP </label>
 						<label class="col-sm-1 control-label">: </label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control" id="npwp" placeholder="Supplier NPWP" name="npwp" autocomplete="off">
-						</div>
+							<input type="text" class="form-control" id="npwp" pattern="[0-9]+" minlength="15" maxlength="15" placeholder="Supplier NPWP" name="npwp" autocomplete="off">
+						</div>						
 					</div> <!-- /form-group-->
 					<div class="form-group">
 						<label for="brandName" class="col-sm-3 control-label">Person In Charge </label>
@@ -146,7 +146,7 @@
 							<label for="brandName" class="col-sm-3 control-label">Contact </label>
 							<label class="col-sm-1 control-label">: </label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="editContact" placeholder="Supplier Contact" name="editContact" autocomplete="off">
+								<input type="text" class="form-control" pattern="[0-9]+" maxlength="13" id="editContact" placeholder="Supplier Contact" name="editContact" autocomplete="off">
 							</div>
 						</div> <!-- /form-group-->
 						<div class="form-group">
@@ -160,7 +160,7 @@
 							<label for="brandName" class="col-sm-3 control-label">NPWP </label>
 							<label class="col-sm-1 control-label">: </label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="editNpwp" placeholder="Supplier NPWP" name="editNpwp" autocomplete="off">
+								<input type="text" class="form-control" minlength="15" pattern="[0-9]+" maxlength="15" id="editNpwp" placeholder="Supplier NPWP" name="editNpwp" autocomplete="off">
 							</div>
 						</div> <!-- /form-group-->
 						<div class="form-group">

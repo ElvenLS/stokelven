@@ -69,14 +69,14 @@
 						<label class="col-sm-3 control-label">Qty </label>
 						<label class="col-sm-1 control-label">: </label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control" id="qty" placeholder="Qty" name="qty" autocomplete="off">
+							<input type="text" class="form-control" id="qty" pattern="[0-9]+" placeholder="Qty" name="qty" autocomplete="off">
 						</div>
 					</div> <!-- /form-group-->
 					<div class="form-group">
 						<label class="col-sm-3 control-label">Price </label>
 						<label class="col-sm-1 control-label">: </label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control" id="price" placeholder="Price" name="price" autocomplete="off">
+							<input type="text" class="form-control" id="price" pattern="[0-9]+" placeholder="Price" name="price" autocomplete="off">
 						</div>
 					</div> <!-- /form-group-->
 					<div class="form-group">
@@ -166,14 +166,14 @@
 							<label class="col-sm-3 control-label">Qty </label>
 							<label class="col-sm-1 control-label">: </label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="editQty" placeholder="Qty" name="editQty" autocomplete="off">
+								<input type="text" class="form-control" pattern="[0-9]+" id="editQty" placeholder="Qty" name="editQty" autocomplete="off">
 							</div>
 						</div> <!-- /form-group-->
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Price </label>
 							<label class="col-sm-1 control-label">: </label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="editPrice" placeholder="Price" name="editPrice" autocomplete="off">
+								<input type="text" class="form-control" id="editPrice" pattern="[0-9]+" placeholder="Price" name="editPrice" autocomplete="off">
 							</div>
 						</div> <!-- /form-group-->
 

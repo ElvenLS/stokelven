@@ -1,6 +1,7 @@
 var manageBrandTable;
 
 $(document).ready(function() {
+
 	// top bar active
 	$('#navBrand').addClass('active');
 	
