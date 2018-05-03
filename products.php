@@ -28,7 +28,7 @@
 					<thead>
 						<tr>
 							<th>Product ID</th>
-							<th>Product Namev></th>
+							<th>Product Name</th>
 							<th>Qty</th>
 							<th>Price</th>
 							<th>Category ID</th>
