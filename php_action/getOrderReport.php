@@ -1,5 +1,5 @@
 <?php 
-
+error_reporting(0);
 require_once 'core.php';
 
 if($_POST) {
@@ -15,7 +15,7 @@ if($_POST) {
 
 	$sql = "SELECT * FROM log, products WHERE timestamp >= '$start_date' AND timestamp <= '$end_date' AND log.productid=products.productid ";
 	$query = $connect->query($sql);
-
+//echo $sql;
 	$table = '
 	<h2 align="center"> PT. Wana Arta Manunggal </h2>
 	<h3 align="center"> Periode '.$start_date.' - '.$end_date.' </h3>
@@ -23,41 +23,47 @@ if($_POST) {
 	<table border="1" cellspacing="0" cellpadding="0" style="width:100%;">
 		<tr>
 			<th rowspan="2">No</th>
+			<th rowspan="2">Tanggal</th>
 			<th rowspan="2">Product Name</th>
-			<th colspan="4">Quantity</th>
+			
+			<th colspan="2">Quantity</th>
 		</tr>
 		<tr>
-			<th>Awal</th>
 			<th>Masuk</th>
 			<th>Keluar</th>
-			<th>Total</th>
 		</tr>
 
 		<tr>';
 			$totalAmount = "";
 			$a=1;
-			while ($result = $query->fetch_assoc()) {
-				$keluar = 0; //sum();
-				$masuk =0; //sum();
-				$awal = $result['qty'] - $keluar + $masuk;
+			while ($result = $query->fetch_array()) {
+//				echo $result[4];
+				if($result[3]=="Keluar"){
+					$keluar = $result[2] ; //sum();	
+					$masuk = 0 ; //sum();	
+				}
+				if($result[3]=="Masuk"){
+					$keluar = 0 ; //sum();	
+					$masuk = $result[2] ; //sum();
+				}
+				
+								
+				
+				
+				$awal = $result[7] - $keluar + $masuk;
 				$table .= '<tr>
 				<td><center>'.$a.'</center></td>
+				<td><center>'.$result[4].'</center></td>
 				<td><center>'.$result['name'].'</center></td>
-				<td><center>'.$awal.'</center></td>
 				<td><center>'.$masuk.'</center></td>
 				<td><center>'.$keluar.'</center></td>
-				<td><center>'.$result['qty'].'</center></td>
 			</tr>';	
-			$totalAmount += $result['qty'];
+			$totalAmount += $result[7];
 			$a++;
 		}
 		$table .= '
 	</tr>
 
-	<tr>
-		<td colspan="5"><center>Total</center></td>
-		<td><center>'.$totalAmount.'</center></td>
-	</tr>
 </table>
 ';	
 
