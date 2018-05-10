@@ -5,12 +5,12 @@
 
 		<ol class="breadcrumb">
 			<li><a href="#">Home</a></li>		  
-			<li class="active">Product</li>
+			<li class="active">Supplier</li>
 		</ol>
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<div class="page-heading"> <i class="glyphicon glyphicon-edit"></i> View Product</div>
+				<div class="page-heading"> <i class="glyphicon glyphicon-edit"></i> View Supplier</div>
 			</div> <!-- /panel-heading -->
 			<div class="panel-body">
 
@@ -19,35 +19,20 @@
 				<table class="table" id="manageProductTable">
 					<thead>
 						<tr>
-							<th>Product ID</th>
-							<th>Product Name</th>
-							<th>Qty</th>
-							<th>Price</th>
-							<th>Category ID</th>
-							<th>Supplier ID</th>
-							<th>Status</th>
+							<th>Supplier ID <div class="glyphicon glyphicon-sort"></div></th>							
+							<th>Supplier Name <div class="glyphicon glyphicon-sort"></div></th>
+							<th>Contact <div class="glyphicon glyphicon-sort"></div></th>
+							<th>Address <div class="glyphicon glyphicon-sort"></div></th>
+							<th>NPWP <div class="glyphicon glyphicon-sort"></div></th>
+							<th>PIC <div class="glyphicon glyphicon-sort"></div></th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php
-						$lowStockSql = "SELECT * FROM products";
+						$lowStockSql = "SELECT * FROM supplier";
 						$result = $connect->query($lowStockSql);
 
 						if($result->num_rows > 0) { 
-
- // $row = $result->fetch_array();
-							$activeProduct = ""; 
-
-							while($row = $result->fetch_array()) {
-								$productId = $row[0];
- 	// active 
-								if($row[6] == "Available") {
- 		// activate member
-									$activeProduct = "<label class='label label-success'>Available</label>";
-								} else {
- 		// deactivate member
-									$activeProduct = "<label class='label label-danger'>Not Available</label>";
-								}
 								echo "<tr>";
 								echo "<td>".$row[0]."</td>";
 								echo "<td>".$row[1]."</td>";
@@ -55,7 +40,6 @@
 								echo "<td>".$row[3]."</td>";
 								echo "<td>".$row[4]."</td>";
 								echo "<td>".$row[5]."</td>";
-								echo "<td>".$activeProduct."</td>";
 								echo "</tr>";
 							}
 						}
