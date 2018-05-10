@@ -2,20 +2,20 @@
 
 <?php 
 
-$sql = "SELECT * FROM product WHERE status = 1";
+$sql = "SELECT * FROM products";
 $query = $connect->query($sql);
 $countProduct = $query->num_rows;
 
-$orderSql = "SELECT * FROM orders WHERE order_status = 1";
-$orderQuery = $connect->query($orderSql);
-$countOrder = $orderQuery->num_rows;
+// $orderSql = "SELECT * FROM orders WHERE order_status = 1";
+// $orderQuery = $connect->query($orderSql);
+// $countOrder = $orderQuery->num_rows;
 
-$totalRevenue = "";
-while ($orderResult = $orderQuery->fetch_assoc()) {
-	$totalRevenue += $orderResult['paid'];
-}
+// $totalRevenue = "";
+// while ($orderResult = $orderQuery->fetch_assoc()) {
+// 	$totalRevenue += $orderResult['paid'];
+// }
 
-$lowStockSql = "SELECT * FROM product WHERE quantity <= 3 AND status = 1";
+$lowStockSql = "SELECT * FROM products WHERE qty <= 3";
 $lowStockQuery = $connect->query($lowStockSql);
 $countLowStock = $lowStockQuery->num_rows;
 
@@ -71,16 +71,6 @@ $connect->close();
 				
 			</div> <!--/panel-hdeaing-->
 		</div>
-
-			<!-- <div class="panel panel-info"> -->
-			<!-- <div class="panel-heading">
-				<a href="orders.php?o=manord" style="text-decoration:none;color:black;">
-					Total Orders
-					<span class="badge pull pull-right"><?php echo $countOrder; ?></span>
-				</a>
-					
-			</div> --> <!--/panel-hdeaing-->
-		<!-- </div> /panel -->
 		</div> <!--/col-md-4-->
 
 	<div class="col-md-4">
