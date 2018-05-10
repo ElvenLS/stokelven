@@ -71,7 +71,7 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-					<button type="submit" class="btn btn-primary" id="createCategoriesBtn" data-loading-text="Loading..." autocomplete="off">Save Changes</button>
+					<button type="submit" class="btn btn-primary" id="createCategoriesBtn" data-loading-text="Loading..." autocomplete="off" onClick="window.location.reload();">Save Changes</button>
 				</div>
 				<!-- /modal-footer -->
 			</form>
@@ -133,7 +133,7 @@
 				<div class="modal-footer editCategoriesFooter">
 					<button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
 
-					<button type="submit" class="btn btn-success" id="editCategoriesBtn" data-loading-text="Loading..." autocomplete="off"> <i class="glyphicon glyphicon-ok-sign"></i> Save Changes</button>
+					<button type="submit" class="btn btn-success" id="editCategoriesBtn" data-loading-text="Loading..." autocomplete="off" onClick="window.location.reload();"> <i class="glyphicon glyphicon-ok-sign" ></i> Save Changes</button>
 				</div>
 				<!-- /modal-footer -->
 			</form>
