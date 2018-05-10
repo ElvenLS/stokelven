@@ -25,28 +25,6 @@ $connect->close();
 
 				
 
-				<form action="php_action/changeUsername.php" method="post" class="form-horizontal" id="changeUsernameForm">
-					<fieldset>
-						<legend>Change Username</legend>
-
-						<div class="changeUsenrameMessages"></div>			
-
-						<div class="form-group">
-					    <label for="username" class="col-sm-2 control-label">Username</label>
-					    <div class="col-sm-10">
-					      <input type="text" class="form-control" id="username" name="username" placeholder="Usename" value="<?php echo $result['username']; ?>"/>
-					    </div>
-					  </div>
-
-					  <div class="form-group">
-					    <div class="col-sm-offset-2 col-sm-10">
-					    	<input type="hidden" name="user_id" id="user_id" value="<?php echo $result['user_id'] ?>" /> 
-					      <button type="submit" class="btn btn-success" data-loading-text="Loading..." id="changeUsernameBtn"> <i class="glyphicon glyphicon-ok-sign"></i> Save Changes </button>
-					    </div>
-					  </div>
-					</fieldset>
-				</form>
-
 				<form action="php_action/changePassword.php" method="post" class="form-horizontal" id="changePasswordForm">
 					<fieldset>
 						<legend>Change Password</legend>
