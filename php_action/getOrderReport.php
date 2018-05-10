@@ -13,7 +13,7 @@ if($_POST) {
 	$format = DateTime::createFromFormat('m/d/Y',$endDate);
 	$end_date = $format->format("Y-m-d");
 
-	$sql = "SELECT * FROM log, products WHERE timestamp >= '$start_date' AND timestamp <= '$end_date' AND log.productid=productss.productid ";
+	$sql = "SELECT * FROM log, products WHERE timestamp >= '$start_date' AND timestamp <= '$end_date' AND log.productid=products.productid ";
 	$query = $connect->query($sql);
 
 	$table = '
@@ -35,20 +35,20 @@ if($_POST) {
 
 		<tr>';
 			$totalAmount = "";
-			$a=0;
+			$a=1;
 			while ($result = $query->fetch_assoc()) {
 				$keluar = 0; //sum();
 				$masuk =0; //sum();
-				$awal = $result['products.qty'] - $keluar + $masuk;
+				$awal = $result['qty'] - $keluar + $masuk;
 				$table .= '<tr>
 				<td><center>'.$a.'</center></td>
 				<td><center>'.$result['name'].'</center></td>
 				<td><center>'.$awal.'</center></td>
 				<td><center>'.$masuk.'</center></td>
 				<td><center>'.$keluar.'</center></td>
-				<td><center>'.$result['products.qty'].'</center></td>
+				<td><center>'.$result['qty'].'</center></td>
 			</tr>';	
-			$totalAmount += $result['products.qty'];
+			$totalAmount += $result['qty'];
 			$a++;
 		}
 		$table .= '
