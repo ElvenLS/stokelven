@@ -2,7 +2,7 @@
 <!--
 - tombol search (supplier dan category)
 -->
-  <link rel="stylesheet" href="lteasset/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+<!--  <link rel="stylesheet" href="lteasset/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">-->
 
 <div class="row">
 	<div class="col-md-12">
@@ -52,7 +52,7 @@
 			<form class="form-horizontal" id="submitProductForm" action="php_action/createProducts.php" method="POST">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title"><i class="fa fa-plus"></i> Add Supplier</h4>
+					<h4 class="modal-title"><i class="fa fa-plus"></i> Add Product</h4>
 				</div>
 				<div class="modal-body">
 
@@ -255,7 +255,8 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title"><i class="fa fa-search"></i> Search Category </h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title"><i class="fa fa-search"></i> Search Category  </h4>
 			</div>
 			<div class="modal-body">
 
@@ -323,6 +324,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title"><i class="fa fa-search"></i> Search Supplier</h4>
 			</div>
 			<div class="modal-body">
@@ -424,6 +426,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title"><i class="fa fa-search"></i> Search Category </h4>
 			</div>
 			<div class="modal-body">
@@ -492,6 +495,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title"><i class="fa fa-search"></i> Search Supplier</h4>
 			</div>
 			<div class="modal-body">
@@ -569,7 +573,7 @@
 <!-- /edit brand -->
 
 <!-- DataTables -->
-<script src="lteasset/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<!--<script src="lteasset/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>-->
 <script src="lteasset/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- SlimScroll -->
 <script>

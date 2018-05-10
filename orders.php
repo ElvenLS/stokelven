@@ -25,7 +25,7 @@ if($_GET['o'] == 'add') {
 		</ol>
 
 
-		<h4>
+		<h4 >
 			<i class='glyphicon glyphicon-circle-arrow-right'></i>
 			<?php if($_GET['o'] == 'add') {
 				echo "Barang Masuk";
@@ -55,9 +55,16 @@ if($_GET['o'] == 'add') {
 			
 
 		</script>
-
-		<div class="panel panel-default">
-			<div class="panel-heading">
+<?php if($_GET['o'] == 'add') {
+	$warna="rgba(37,196,19,0.67)";
+ } else if($_GET['o'] == 'red') {
+	$warna="rgba(239,130,132,0.69)";
+}else{
+	$watna="#DDDDDD";
+}
+?>
+		<div class="panel panel-default" >
+			<div class="panel-heading" style="background: <?php echo $warna; ?> ">
 				<?php if($_GET['o'] == 'add') { ?>
 					<i class="glyphicon glyphicon-plus-sign"></i>Barang Masuk
 					<?php } else if($_GET['o'] == 'red') { ?>
@@ -112,7 +119,7 @@ if($_GET['o'] == 'add') {
 											<tr id="1">
 											<td style="margin-left:20px;">
 												<div class="form-group">
-													<input type="text" class="form-control" id="pid" onchange="cek_database(1)" name="pid" autocomplete="off">
+													<input type="text" class="form-control" id="pid" onchange="cek_database(1)" name="pid" autocomplete="off" required>
 												</div>
 											</td>
 											<td style="margin-left:0px">
@@ -137,7 +144,7 @@ if($_GET['o'] == 'add') {
 											<td style="padding-left:20px;">
 												<div class="form-group">
 													<!-- <input type="number" name="quantity" id="quantity" onkeyup="getTotal(<?php echo $x ?>)" autocomplete="off" class="form-control" min="1" /> -->
-													<input type="number" name="quantity" id="quantity" autocomplete="off" class="form-control" min="1" onchange="cekBarang(1)" />
+													<input type="number" name="quantity" id="quantity" autocomplete="off" class="form-control" min="1" onchange="cekBarang(1)" required />
 												</div>
 											</td>
 											<td>
