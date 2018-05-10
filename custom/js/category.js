@@ -43,6 +43,7 @@ $(document).ready(function() {
 		if(categoryname && description) {
 			var form = $(this);
 			// button loading
+			
 			$("#createCategoriesBtn").button('loading');
 
 			$.ajax({
