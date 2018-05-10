@@ -15,7 +15,7 @@ $countProduct = $query->num_rows;
 // 	$totalRevenue += $orderResult['paid'];
 // }
 
-$lowStockSql = "SELECT * FROM products WHERE qty <= 3";
+$lowStockSql = "SELECT * FROM products WHERE qty <= 3 AND status='available'";
 $lowStockQuery = $connect->query($lowStockSql);
 $countLowStock = $lowStockQuery->num_rows;
 
@@ -64,7 +64,7 @@ $connect->close();
 <div class="panel panel-success">
 			<div class="panel-heading">
 				
-				<a href="product.php" style="text-decoration:none;color:black;">
+				<a href="products.php" style="text-decoration:none;color:black;">
 					Total Product
 					<span class="badge pull pull-right"><?php echo $countProduct; ?></span>	
 				</a>
@@ -76,7 +76,7 @@ $connect->close();
 	<div class="col-md-4">
 		<div class="panel panel-danger">
 			<div class="panel-heading">
-				<a href="product.php" style="text-decoration:none;color:black;">
+				<a href="lowstock.php" style="text-decoration:none;color:black;">
 					Low Stock
 					<span class="badge pull pull-right"><?php echo $countLowStock; ?></span>	
 				</a>
