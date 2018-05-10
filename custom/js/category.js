@@ -204,4 +204,5 @@ function editCategory(categoryId = null) {
 } else {
 	alert('error!! Refresh the page again');
 }
+	
 } // /edit Categoriess function

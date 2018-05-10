@@ -38,8 +38,12 @@ if($_POST) {
 
 				// set session
 				$_SESSION['userId'] = $user_id;
-
-				header('location: dashboard.php');	
+				if ($username == 'user'){
+					$lokasi='location: user/dashboard.php';
+				}else{
+					$lokasi='location: dashboard.php';
+				}
+				header($lokasi);	
 			} else{
 				
 				$errors[] = "Incorrect username/password combination";
