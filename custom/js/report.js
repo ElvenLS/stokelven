@@ -38,7 +38,7 @@ $(document).ready(function() {
 				dataType: 'text',
 				success:function(response) {
 					var mywindow = window.open('', 'Stock Management System', 'height=400,width=600');
-	        mywindow.document.write('<html><head><title>Order Report Slip</title>');        
+	        mywindow.document.write('<html><head><title>Report</title>');        
 	        mywindow.document.write('</head><body>');
 	        mywindow.document.write(response);
 	        mywindow.document.write('</body></html>');

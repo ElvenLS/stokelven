@@ -13,40 +13,55 @@ if($_POST) {
 	$format = DateTime::createFromFormat('m/d/Y',$endDate);
 	$end_date = $format->format("Y-m-d");
 
-	$sql = "SELECT * FROM orders WHERE order_date >= '$start_date' AND order_date <= '$end_date' and order_status = 1";
+	$sql = "SELECT * FROM log, products WHERE timestamp >= '$start_date' AND timestamp <= '$end_date' AND log.productid=productss.productid ";
 	$query = $connect->query($sql);
 
 	$table = '
+	<h2 align="center"> PT. Wana Arta Manunggal </h2>
+	<h3 align="center"> Periode '.$start_date.' - '.$end_date.' </h3>
+
 	<table border="1" cellspacing="0" cellpadding="0" style="width:100%;">
 		<tr>
-			<th>Order Date</th>
-			<th>Client Name</th>
-			<th>Contact</th>
-			<th>Grand Total</th>
+			<th rowspan="2">No</th>
+			<th rowspan="2">Product Name</th>
+			<th colspan="4">Quantity</th>
+		</tr>
+		<tr>
+			<th>Awal</th>
+			<th>Masuk</th>
+			<th>Keluar</th>
+			<th>Total</th>
 		</tr>
 
 		<tr>';
-		$totalAmount = "";
-		while ($result = $query->fetch_assoc()) {
-			$table .= '<tr>
-				<td><center>'.$result['order_date'].'</center></td>
-				<td><center>'.$result['client_name'].'</center></td>
-				<td><center>'.$result['client_contact'].'</center></td>
-				<td><center>'.$result['grand_total'].'</center></td>
+			$totalAmount = "";
+			$a=0;
+			while ($result = $query->fetch_assoc()) {
+				$keluar = 0; //sum();
+				$masuk =0; //sum();
+				$awal = $result['products.qty'] - $keluar + $masuk;
+				$table .= '<tr>
+				<td><center>'.$a.'</center></td>
+				<td><center>'.$result['name'].'</center></td>
+				<td><center>'.$awal.'</center></td>
+				<td><center>'.$masuk.'</center></td>
+				<td><center>'.$keluar.'</center></td>
+				<td><center>'.$result['products.qty'].'</center></td>
 			</tr>';	
-			$totalAmount += $result['grand_total'];
+			$totalAmount += $result['products.qty'];
+			$a++;
 		}
 		$table .= '
-		</tr>
+	</tr>
 
-		<tr>
-			<td colspan="3"><center>Total Amount</center></td>
-			<td><center>'.$totalAmount.'</center></td>
-		</tr>
-	</table>
-	';	
+	<tr>
+		<td colspan="5"><center>Total</center></td>
+		<td><center>'.$totalAmount.'</center></td>
+	</tr>
+</table>
+';	
 
-	echo $table;
+echo $table;
 
 }
 
